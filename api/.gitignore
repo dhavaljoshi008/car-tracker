@@ -1,0 +1,29 @@
+# Eclipse Launch Configurations
+*.launch
+
+# Java Annotation Processor (APT)
+.factorypath
+
+# Spring Tool Suite (STS)
+.springBeans
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Miscellaneous
+target/
+.metadata
+.project
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.classpath
+.recommenders
+application.properties

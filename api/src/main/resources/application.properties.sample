@@ -1,0 +1,8 @@
+# API Server
+server.port=9999
+server.context-path=/api
+
+# MongoDB Server
+spring.data.mongodb.host=localhost
+spring.data.mongodb.port=27017
+spring.data.mongodb.database=dataTestDB
