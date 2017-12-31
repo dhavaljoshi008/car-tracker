@@ -11,6 +11,8 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import app.djxlab.cartracker.api.constant.Constants;
+
 @Document(collection = "dataCollection")
 public class Reading {
 	
@@ -40,6 +42,8 @@ public class Reading {
 	private int engineRpm;
 	
 	private Tires tires;
+	
+	private final String type = Constants.TYPE_READING;
 
 	public String getId() {
 		return id;
