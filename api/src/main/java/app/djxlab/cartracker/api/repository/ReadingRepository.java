@@ -11,6 +11,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import app.djxlab.cartracker.api.entity.Reading;
 
 public interface ReadingRepository extends MongoRepository<Reading, String> {
-	
-	public Reading insert(Reading reading);
+
 }

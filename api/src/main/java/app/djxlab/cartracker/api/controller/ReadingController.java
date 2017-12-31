@@ -27,7 +27,7 @@ public class ReadingController {
 	
     @CrossOrigin(origins = "http://mocker.egen.io")
 	@RequestMapping(value = "/readings", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public Reading insertReading(@RequestBody Reading reading) {
+	public Reading postReading(@RequestBody Reading reading) {
 		return readingService.insert(reading);
 	}
 }
