@@ -6,7 +6,7 @@
  */
 package app.djxlab.cartracker.api.constant;
 
-public class Constants {
+public final class Constants {
 
 	// Document types. 
 	
@@ -15,4 +15,8 @@ public class Constants {
 	public static final String TYPE_VEHICLE = "vehicle";
 
 	public static final String TYPE_ALERT = "alert";
+	
+	private Constants() {
+		
+	}
 }
