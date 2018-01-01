@@ -23,6 +23,8 @@ public interface AlertService {
 	
 	public List<Alert> findAllAlertsByCategoryForVehicle(String category, String vin);
 	
+	public List<Alert> findAllAlertsByPriority(String priority);
+	
 	public void triggerEngineRpmAlert(AlertDTO alertDTO);
 	
 	public void triggerFuelVolumeAlert(AlertDTO alertDTO);

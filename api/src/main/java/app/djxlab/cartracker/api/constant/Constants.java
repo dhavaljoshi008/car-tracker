@@ -33,11 +33,11 @@ public final class Constants {
 	
 	// Priorities.
 	
-	public static final String PRIORITY_HIGH = "HIGH";
+	public static final String PRIORITY_HIGH = "high";
 	
-	public static final String PRIORITY_MEDIUM = "MEDIUM";
+	public static final String PRIORITY_MEDIUM = "medium";
 	
-	public static final String PRIORITY_LOW = "LOW";
+	public static final String PRIORITY_LOW = "low";
 	
 	
 	// Business constraints.

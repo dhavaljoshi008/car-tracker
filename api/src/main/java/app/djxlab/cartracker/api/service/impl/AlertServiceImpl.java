@@ -80,4 +80,9 @@ public class AlertServiceImpl implements AlertService {
 	public List<Alert> findAllAlertsByCategoryForVehicle(String category, String vin) {
 		return alertRepository.findAllAlertsByCategoryForVehicle(category, vin);
 	}
+
+	@Override
+	public List<Alert> findAllAlertsByPriority(String priority) {
+		return alertRepository.findAllAlertsByPriority(priority);
+	}
 }
