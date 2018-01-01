@@ -25,6 +25,11 @@ public class AlertServiceImpl implements AlertService {
 	public AlertServiceImpl(AlertRepository alertRepository) {
 		this.alertRepository = alertRepository;
 	}
+		
+	@Override
+	public Alert insert(Alert alert) {
+		return alertRepository.insert(alert);
+	}
 	
 	@Override
 	public List<Alert> findAllAlerts() {
@@ -32,8 +37,8 @@ public class AlertServiceImpl implements AlertService {
 	}
 	
 	@Override
-	public Alert insert(Alert alert) {
-		return alertRepository.insert(alert);
+	public List<Alert> findAllAlertsForVehicle(String vin) {
+		return alertRepository.findAllAlertsForVehicle(vin);
 	}
 
 	@Override

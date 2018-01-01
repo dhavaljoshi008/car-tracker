@@ -17,6 +17,8 @@ public interface AlertService {
 	
 	public List<Alert> findAllAlerts();
 	
+	public List<Alert> findAllAlertsForVehicle(String vin);
+	
 	public void triggerEngineRpmAlert(AlertDTO alertDTO);
 	
 	public void triggerFuelVolumeAlert(AlertDTO alertDTO);

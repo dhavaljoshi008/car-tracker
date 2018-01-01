@@ -17,4 +17,7 @@ public interface AlertRepository extends MongoRepository<Alert, String> {
 
 	@Query("{'type' : 'alert'}")
 	public List<Alert> findAllAlerts();
+	
+	@Query("{'type' : 'alert', 'vin' : ?0}")
+	public List<Alert> findAllAlertsForVehicle(String vin);
 }
