@@ -27,7 +27,7 @@ public class AlertFactory {
 			case Constants.ALERT_CHECK_ENGINE_LIGHT_ON:
 				return new CheckEngineLightOnAlert(alertDTO.isCheckEngineLightOn(), alertDTO.getVin(), alertDTO.getMake(), alertDTO.getModel());
 			default:
-				return new Alert("","", "", "", "");
+				return new NullAlert();
 		}
 	}
 }
