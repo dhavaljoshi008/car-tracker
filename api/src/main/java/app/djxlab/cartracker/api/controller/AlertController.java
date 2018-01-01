@@ -43,4 +43,10 @@ public class AlertController {
 	public List<Alert> getAllAlertsByCategory(@PathVariable String category) {
 		return alertService.findAllAlertsByCategory(category);
 	}
+	
+	// Get all alerts by category for a particular vehicle identified by vin.
+	@RequestMapping(value = "/alerts/{category}/vehicle/{vin}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public List<Alert> getAllAlertsByCategoryForVehicle(@PathVariable String category, @PathVariable String vin) {
+		return alertService.findAllAlertsByCategoryForVehicle(category, vin);
+	}
 }

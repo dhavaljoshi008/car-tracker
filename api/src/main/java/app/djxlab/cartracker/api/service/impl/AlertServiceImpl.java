@@ -75,4 +75,9 @@ public class AlertServiceImpl implements AlertService {
 		Alert alert = AlertFactory.build(Constants.ALERT_CHECK_ENGINE_LIGHT_ON, alertDTO);
 		alertRepository.insert(alert);
 	}
+
+	@Override
+	public List<Alert> findAllAlertsByCategoryForVehicle(String category, String vin) {
+		return alertRepository.findAllAlertsByCategoryForVehicle(category, vin);
+	}
 }
