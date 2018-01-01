@@ -15,4 +15,6 @@ public interface VehicleService {
 	public Vehicle save(Vehicle vehicle);
 	
 	public List<Vehicle> save(List<Vehicle> vehicles); 
+	
+	public Vehicle findOneVehicle(String vin);
 }

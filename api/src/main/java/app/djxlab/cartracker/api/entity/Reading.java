@@ -44,6 +44,38 @@ public class Reading {
 	private Tires tires;
 	
 	private final String type = Constants.TYPE_READING;
+	
+	
+	public Reading() {
+		
+	}
+	
+	// Copy constructor.
+	public Reading(Reading reading) {
+		this.vin = reading.vin;
+		
+		this.latitude = reading.latitude ;
+		
+		this.longitude = reading.longitude;
+		
+		this.timestamp = (Date) reading.timestamp.clone();
+		
+		this.fuelVolume =  reading.fuelVolume;
+		
+		this.speed =  reading.speed;
+		
+		this.engineHp = reading.engineHp;
+		
+		this.checkEngineLightOn = reading.checkEngineLightOn;
+		
+		this.engineCoolantLow = reading.engineCoolantLow;
+			   
+		this.cruiseControlOn = reading.cruiseControlOn;
+		
+		this.engineRpm = reading.engineRpm;
+		
+		this.tires = new Tires(reading.tires);
+	}
 
 	public String getId() {
 		return id;

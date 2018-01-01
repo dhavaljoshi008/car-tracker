@@ -19,6 +19,18 @@ public class Tires implements Serializable {
 	private double rearLeft;
     
 	private double rearRight;
+	
+	public Tires() {
+		
+	}
+	
+	// Copy constructor.
+	public Tires(Tires tires) {
+		this.frontLeft = tires.frontLeft;
+		this.frontRight  = tires.frontRight;
+		this.rearLeft = tires.rearLeft;
+		this.rearRight = tires.rearRight;
+	}
 
 	public double getFrontLeft() {
 		return frontLeft;

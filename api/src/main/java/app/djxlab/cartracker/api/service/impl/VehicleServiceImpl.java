@@ -22,6 +22,7 @@ public class VehicleServiceImpl implements VehicleService{
 	public VehicleServiceImpl(VehicleRepository vehicleRepository) {
 		this.vehicleRepository = vehicleRepository;
 	}
+	
 	@Override
 	public Vehicle save(Vehicle vehicle) {
 		generateVehicleDocumentId(vehicle);
@@ -41,5 +42,10 @@ public class VehicleServiceImpl implements VehicleService{
 		StringBuilder idBuilder = new StringBuilder();
 		idBuilder.append("vehicle_").append(vehicle.getVin());
 		vehicle.setId(idBuilder.toString());	
+	}
+	
+	@Override
+	public Vehicle findOneVehicle(String vin) {
+		return vehicleRepository.findOneVehicle(vin);
 	}
 }

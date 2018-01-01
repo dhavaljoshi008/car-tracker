@@ -1,18 +1,20 @@
 /**
- * VehicleRepository.java
+ * AlertRepository.java
  * app.djxlab.cartracker.api.repository 
  *
  * @author: Dhaval Joshi.
  */
 package app.djxlab.cartracker.api.repository;
 
+import java.util.List;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
-import app.djxlab.cartracker.api.entity.Vehicle;
+import app.djxlab.cartracker.api.entity.Alert;
 
-public interface VehicleRepository extends MongoRepository<Vehicle, String> {
-	
-	@Query("{'type' : 'vehicle', 'vin' : ?0 }")
-	public Vehicle findOneVehicle(String vin);
+public interface AlertRepository extends MongoRepository<Alert, String> {
+
+	@Query("{'type' : 'alert'}")
+	public List<Alert> findAllAlerts();
 }
