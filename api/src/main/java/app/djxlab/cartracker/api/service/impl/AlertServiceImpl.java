@@ -40,6 +40,11 @@ public class AlertServiceImpl implements AlertService {
 	public List<Alert> findAllAlertsForVehicle(String vin) {
 		return alertRepository.findAllAlertsForVehicle(vin);
 	}
+	
+	@Override
+	public List<Alert> findAllAlertsByCategory(String category) {
+		return alertRepository.findAllAlertsByCategory(category);
+	}
 
 	@Override
 	public void triggerEngineRpmAlert(AlertDTO alertDTO) {
