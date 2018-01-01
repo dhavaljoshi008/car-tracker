@@ -6,9 +6,15 @@
  */
 package app.djxlab.cartracker.api.service;
 
+import java.util.List;
+
 import app.djxlab.cartracker.api.entity.Reading;
 
 public interface ReadingService {
 
 	public Reading insert(Reading reading);
+	
+	public List<Reading> findAllReadings();
+	
+	public List<Reading> findAllReadingsForVehicle(String vin);
 }

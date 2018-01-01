@@ -6,6 +6,8 @@
  */
 package app.djxlab.cartracker.api.service.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import app.djxlab.cartracker.api.entity.Reading;
@@ -38,5 +40,15 @@ public class ReadingServiceImpl implements ReadingService {
 		businessService.analyzeEngineCoolantLowFromReading(reading);
 		businessService.analyzeCheckEngineLightOnFromReading(reading);
 		businessService.analyzeTirePressureFromReading(reading);
+	}
+
+	@Override
+	public List<Reading> findAllReadings() {
+		return readingRepository.findAllReadings();
+	}
+
+	@Override
+	public List<Reading> findAllReadingsForVehicle(String vin) {
+		return readingRepository.findAllReadingsForVehicle(vin);
 	}
 }
