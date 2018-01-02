@@ -25,6 +25,8 @@ public interface AlertService {
 	
 	public List<Alert> findAllAlertsByPriority(String priority);
 	
+	public List<Alert> findAllAlertsByPriorityForVehicle(String priority, String vin);
+	
 	public void triggerEngineRpmAlert(AlertDTO alertDTO);
 	
 	public void triggerFuelVolumeAlert(AlertDTO alertDTO);

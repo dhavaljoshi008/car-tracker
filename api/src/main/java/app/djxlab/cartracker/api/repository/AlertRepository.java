@@ -29,4 +29,7 @@ public interface AlertRepository extends MongoRepository<Alert, String> {
 	
 	@Query("{'type' : 'alert', 'priority' : ?0}")
 	public List<Alert> findAllAlertsByPriority(String priority);
+	
+	@Query("{'type' : 'alert', 'priority' : ?0, 'vin' : ?1}")
+	public List<Alert> findAllAlertsByPriorityForVehicle(String priority, String vin);
 }

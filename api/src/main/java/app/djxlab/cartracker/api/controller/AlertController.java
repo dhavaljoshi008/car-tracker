@@ -55,4 +55,10 @@ public class AlertController {
 	public List<Alert> getAllAlertsByPriority(@PathVariable String priority) {
 		return alertService.findAllAlertsByPriority(priority);
 	}
+	
+	// Get all alerts by priority for a particular vehicle identified by vin.
+	@RequestMapping(value = "/alerts/priority/{priority}/vehicle/{vin}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public List<Alert> getAllAlertsByPriorityForVehicle(@PathVariable String priority, @PathVariable String vin) {
+		return alertService.findAllAlertsByPriorityForVehicle(priority, vin);
+	}
 }

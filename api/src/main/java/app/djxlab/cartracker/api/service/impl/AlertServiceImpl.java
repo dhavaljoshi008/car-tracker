@@ -85,4 +85,9 @@ public class AlertServiceImpl implements AlertService {
 	public List<Alert> findAllAlertsByPriority(String priority) {
 		return alertRepository.findAllAlertsByPriority(priority);
 	}
+
+	@Override
+	public List<Alert> findAllAlertsByPriorityForVehicle(String priority, String vin) {
+		return alertRepository.findAllAlertsByPriorityForVehicle(priority, vin);
+	}
 }
