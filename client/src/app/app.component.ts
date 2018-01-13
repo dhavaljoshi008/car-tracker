@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuItem } from './utilities/menu-item'
+import { MenuItem } from './utils/menu-item'
 
 @Component({
   selector: 'app-root',

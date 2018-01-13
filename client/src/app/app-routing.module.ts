@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { CustomPreloader } from './utilities/custom-preloader';
+import { CustomPreloader } from './utils/custom-preloader';
 
 const ROUTES: Routes = [
   { 
