@@ -14,9 +14,9 @@ export class AppComponent {
   constructor() {
     this.appTitle = 'Car Tracker';
     this.menuItems = [
-      { caption: 'Vehicles', link: '#' },
-      { caption: 'Readings', link: '#' },
-      { caption: 'Alerts', link: '#' }
+      { caption: 'Vehicles', link: '/vehicles' },
+      { caption: 'Readings', link: '/readings' },
+      { caption: 'Alerts', link: '/alerts' }
     ];
   }
 }
