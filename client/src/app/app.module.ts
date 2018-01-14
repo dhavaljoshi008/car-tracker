@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+
 import { VehicleService } from './vehicles/vehicle.service';
+import { ReadingService } from './readings/reading.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,7 @@ import { VehicleService } from './vehicles/vehicle.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [VehicleService],
+  providers: [VehicleService, ReadingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

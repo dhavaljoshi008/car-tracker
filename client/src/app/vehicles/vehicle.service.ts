@@ -11,7 +11,7 @@ import { Vehicle } from './vehicle';
 @Injectable()
 export class VehicleService {
 
-  private vehiclesUrl;
+  private vehiclesUrl: string;
 
   private host = 'localhost';
 
@@ -27,7 +27,7 @@ export class VehicleService {
    getAllVehicles(): Observable<Vehicle[]> {
      return this.http.get<Vehicle[]>(this.vehiclesUrl)
         .pipe(
-          catchError<Vehicle[], Vehicle[]>(this.handleError('getVehicles', []))
+          catchError<Vehicle[], Vehicle[]>(this.handleError('getAllVehicles', []))
         )
    }
 

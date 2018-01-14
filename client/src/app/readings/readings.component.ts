@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReadingService } from './reading.service';
 
 @Component({
   selector: 'app-readings',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadingsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readingService: ReadingService) { }
 
   ngOnInit() {
   }
 
+  getAllReadings(): void {
+    this.readingService.getAllReadings()
+      .subscribe(readings => console.log(readings));
+  }
 }
