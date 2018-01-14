@@ -37,12 +37,14 @@ public class ReadingController {
 	}
     
     // Get all readings for all vehicles.
+    @CrossOrigin
     @RequestMapping(value = "/readings", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public List<Reading> getAllReadings() {
     		return readingService.findAllReadings();
     }
     
     // Get all readings for a particular vehicle identified by vin.
+    @CrossOrigin
     @RequestMapping(value = "/readings/vehicle/{vin}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public List<Reading> getAllReadingsForVehicle(@PathVariable String vin) {
     		return readingService.findAllReadingsForVehicle(vin);
