@@ -43,12 +43,14 @@ public class VehicleController {
 	}
     
     // Get a particular vehicle identified by vin.
-    @RequestMapping(value = "/vehicle/{vin}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @CrossOrigin
+    @RequestMapping(value = "/vehicles/{vin}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Vehicle getVehicle(@PathVariable String vin) {
     		return vehicleService.findOneVehicle(vin);
     }
     
     // Get all vehicles.
+    @CrossOrigin
     @RequestMapping(value = "/vehicles", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public List<Vehicle> getAllVehicles() {
     		return vehicleService.findAllVehicles();
