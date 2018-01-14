@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 import { VehicleService } from './vehicles/vehicle.service';
 import { ReadingService } from './readings/reading.service';
+import { AlertService } from './alerts/alert.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { ReadingService } from './readings/reading.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [VehicleService, ReadingService],
+  providers: [VehicleService, ReadingService, AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
