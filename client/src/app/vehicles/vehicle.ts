@@ -10,7 +10,7 @@ export interface Vehicle {
     
         redlineRpm: number; 
     
-        maxuelVolume: number; 
+        maxFuelVolume: number; 
     
         lastServiceDate: Date;    
 }

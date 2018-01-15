@@ -1,2 +1,24 @@
-<h1>Vehicles</h1>
-<button class="btn btn-info" (click)="getAllVehicles()">Get Vehicles</button>
+<div class="container scrollable">
+    <div class="vehicles">
+        <!-- Table -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th *ngFor="let heading of tableHeadings">{{ heading }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let vehicle of vehicles; index as i">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ vehicle.vin | uppercase }}</td>
+                    <td>{{ vehicle.make | uppercase }}</td>
+                    <td>{{ vehicle.model | uppercase }}</td>
+                    <td>{{ vehicle.year }}</td>
+                    <td>{{ vehicle.redlineRpm}}</td>
+                    <td>{{ vehicle.maxFuelVolume }}</td>
+                    <td>{{ vehicle.lastServiceDate | date }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

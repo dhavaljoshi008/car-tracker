@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VehicleService } from './vehicle.service';
+import { Vehicle } from './vehicle';
 
 @Component({
   selector: 'app-vehicles',
@@ -8,13 +9,22 @@ import { VehicleService } from './vehicle.service';
 })
 export class VehiclesComponent implements OnInit {
 
-  constructor(private vehicleService: VehicleService) { }
+  tableHeadings: string[];
+
+  vehicles: Vehicle[];
+
+  constructor(private vehicleService: VehicleService) {
+    this.tableHeadings = ['#', 'VIN', 'Make', 'Model', 'Year','RedlineRpm', 'MaxFuelVolume', 'LastServiceDate'];
+   }
 
   ngOnInit() {
+    this.getAllVehicles();
   }
-  
+
   getAllVehicles(): void {
     this.vehicleService.getAllVehicles()
-    .subscribe(vehicles => console.log(vehicles));
+    .subscribe(vehicles => {
+      this.vehicles = vehicles;
+    });
   }
 }
