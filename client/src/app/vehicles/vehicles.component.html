@@ -10,7 +10,7 @@
             <tbody>
                 <tr *ngFor="let vehicle of vehicles; index as i">
                     <td>{{ i + 1 }}</td>
-                    <td>{{ vehicle.vin | uppercase }}</td>
+                    <td><a [routerLink]="vehicle.vin">{{ vehicle.vin | uppercase }}</a></td>
                     <td>{{ vehicle.make | uppercase }}</td>
                     <td>{{ vehicle.model | uppercase }}</td>
                     <td>{{ vehicle.year }}</td>
