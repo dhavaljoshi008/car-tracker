@@ -1,2 +1,46 @@
-<h1>{{ title }}</h1>
-<h3>VIN: {{ vin }}</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+
+                <!-- Vehicle info. -->
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="img">
+                            <img src="assets/vehicle.png" alt="car">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="caption">
+                            <h4>VIN: {{ vin }}</h4>
+                            <ul>
+                                <h5><li>Make: {{ vehicle?.make }}</li></h5>
+                                <h5><li>Model: {{ vehicle?.model }}</li></h5>
+                                <h5><li>Year: {{ vehicle?.year }}</li></h5>
+                                <h5><li>RedlineRpm: {{ vehicle?.redlineRpm }}</li></h5>
+                                <h5><li>MaxFuelVolume: {{ vehicle?.maxFuelVolume }}</li></h5>
+                                <h5><li>LastServiceDate: {{ vehicle?.lastServiceDate | date }}</li></h5>	
+                            </ul>
+                        </div>
+                    </div> 
+                </div>
+
+        </div>
+        <div class="col-md-6">
+            
+
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+           
+
+
+        </div>
+        <div class="col-md-6">
+           
+
+
+        </div>
+    </div>
+</div>

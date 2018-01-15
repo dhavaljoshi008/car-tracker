@@ -31,6 +31,14 @@ export class VehicleService {
         )
    }
 
+   // Get a particular vehicle identified by vin.
+   getVehicle(vin: string): Observable<Vehicle> {
+     return this.http.get<Vehicle>(`${this.vehiclesUrl}/${vin}`)
+      .pipe(
+        catchError<Vehicle, Vehicle>(this.handleError('getVehicle', {}))
+      )
+   }
+
    // Error handler.
    private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
