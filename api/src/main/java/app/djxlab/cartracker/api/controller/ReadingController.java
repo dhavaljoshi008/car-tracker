@@ -6,6 +6,7 @@
  */
 package app.djxlab.cartracker.api.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.http.MediaType;
@@ -48,5 +49,14 @@ public class ReadingController {
     @RequestMapping(value = "/readings/vehicle/{vin}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public List<Reading> getAllReadingsForVehicle(@PathVariable String vin) {
     		return readingService.findAllReadingsForVehicle(vin);
+    }
+    
+    // Get all readings within timestamp for a particular vehicle identified by vin.
+    @CrossOrigin
+    @RequestMapping(value = "/readings/{fromTimestamp}/{uptoTimestamp}/vehicle/{vin}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public List<Reading> getAllReadingsUptoTimestampForVehicle(@PathVariable String fromTimestamp, @PathVariable String uptoTimestamp, @PathVariable String vin) {
+    		Date fromDate = javax.xml.bind.DatatypeConverter.parseDateTime(fromTimestamp).getTime();
+    		Date uptoDate = javax.xml.bind.DatatypeConverter.parseDateTime(uptoTimestamp).getTime();
+    		return readingService.findAllReadingsUptoTimestampForVehicle(fromDate, uptoDate, vin);
     }
 }

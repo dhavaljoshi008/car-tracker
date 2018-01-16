@@ -6,6 +6,7 @@
  */
 package app.djxlab.cartracker.api.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -50,5 +51,10 @@ public class ReadingServiceImpl implements ReadingService {
 	@Override
 	public List<Reading> findAllReadingsForVehicle(String vin) {
 		return readingRepository.findAllReadingsForVehicle(vin);
+	}
+
+	@Override
+	public List<Reading> findAllReadingsUptoTimestampForVehicle(Date fromTimestamp, Date uptoTimestamp, String vin) {
+		return readingRepository.findAllReadingsUptoTimestampForVehicle(fromTimestamp, uptoTimestamp, vin);
 	}
 }
