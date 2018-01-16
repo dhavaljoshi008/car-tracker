@@ -1,0 +1,10 @@
+<div class="historical-alerts-chart">
+  <h4>{{ title }}</h4>
+    <canvas baseChart
+      [data]="doughnutChartData"
+      [labels]="doughnutChartLabels"
+      [chartType]="doughnutChartType"
+      (chartHover)="chartHovered($event)"
+      (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>

@@ -15,7 +15,7 @@ export class AlertService {
 
   private port = '9999';
 
-  private basePath = '/api/alerts';
+  private basePath = 'api/alerts';
 
   constructor(private http: HttpClient) {
     this.alertsUrl = `http://${this.host}:${this.port}/${this.basePath}`;
@@ -27,6 +27,14 @@ export class AlertService {
       .pipe(
         catchError<Alert[], Alert[]>(this.handleError('getAllAlerts', []))
       )
+   }
+
+   // Get all alerts by priority for a particular vehicle identified by vin.
+   getAllAlertsByPriorityForVehicle(priority: string, vin: string): Observable<Alert[]> {
+     return this.http.get<Alert[]>(`${this.alertsUrl}/priority/${priority}/vehicle/${vin}`)
+     .pipe(
+       catchError<Alert[], Alert[]>(this.handleError('getAllAlertsByPriorityForVehicle', []))
+     )
    }
 
    private handleError<T> (operation = 'operation', result?: T) {
