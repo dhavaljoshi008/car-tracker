@@ -1,3 +1,32 @@
 #alert-info-btn {
     float: right;
 }
+
+.list-item {
+    cursor: pointer;
+}
+
+#past-minutes-info:hover, #past-minutes-info:active {
+    background-color: transparent;
+    border-color: #ccc;
+    cursor: default;
+}
+
+#past-minutes-info:active {
+    box-shadow: none;
+}
+
+geolocation {
+    margin: 10em;
+    padding: 10em;
+}
+
+@media (min-width: 568px) {
+    #geolocation-title, #geolocation-settings {
+        display: inline-block;
+    }
+
+    #geolocation-settings {
+        float: right;
+    }
+}

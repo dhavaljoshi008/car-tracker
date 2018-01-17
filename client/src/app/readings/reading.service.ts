@@ -23,22 +23,30 @@ export class ReadingService {
 
    // Get all readings for all vehicles.
    getAllReadings(): Observable<Reading[]> {
-     return this.http.get(this.readingsUrl)
+     return this.http.get<Reading[]>(this.readingsUrl)
       .pipe(
         catchError<Reading[], Reading[]>(this.handleError('getAllReadings', []))
       )
    }
 
-    // Error handler.
-    private handleError<T> (operation = 'operation', result?: T) {
-      return (error: any): Observable<T> => {
-    
-        console.error(error); 
-    
-        console.log(`${operation} failed: ${error.message}`);
-    
-        // Let the app keep running by returning an empty result.
-        return of(result as T);
-      };
-    }
+  // Get all readings within timestamp for a particular vehicle identified by vin.
+  getAllReadingsUptoTimestampForVehicle(fromTimestamp: string, uptoTimestamp: string, vin: string): Observable<Reading[]> {
+    return this.http.get<Reading[]>(`${this.readingsUrl}/${fromTimestamp}/${uptoTimestamp}/vehicle/${vin}`)
+    .pipe(
+      catchError<Reading[], Reading[]>(this.handleError('getAllReadingsUptoTimestampForVehicle', []))
+    )
+  }
+
+  // Error handler.
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      console.error(error); 
+
+      console.log(`${operation} failed: ${error.message}`);
+
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
 }
