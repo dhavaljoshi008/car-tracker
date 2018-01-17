@@ -29,15 +29,15 @@ export class VehicleDetailComponent implements OnInit {
 
   readings: Reading[];
 
-  uptoTimestamp: number ;
+  mapUptoTimestamp: number ;
 
-  pastMinutes: number[];
+  mapPastMinutes: number[];
 
   markers: Marker[];
 
   constructor(private route: ActivatedRoute, private vehicleService: VehicleService, private alertService: AlertService, private readingService: ReadingService) { 
-    this.pastMinutes = [30, 60, 90, 120];
-    this.uptoTimestamp = this.pastMinutes[0]; // Default uptoTimestamp;
+    this.mapPastMinutes = [30, 60, 90, 120];
+    this.mapUptoTimestamp = this.mapPastMinutes[0]; // Default mapUptoTimestamp;
     this.markers = [];
   }
 
@@ -48,18 +48,18 @@ export class VehicleDetailComponent implements OnInit {
     this.getMediumPriorityAlertsForVehicle(vin);
     this.getLowPriorityAlertsForVehicle(vin);
     let now = new Date();
-    this.getAllReadingsUptoTimestampForVehicle(this.calculateBeginingTimestamp(now, this.uptoTimestamp), now.toISOString(), vin);
+    this.getAllReadingsUptoTimestampForVehicle(this.calculateBeginingTimestamp(now, this.mapUptoTimestamp), now.toISOString(), vin);
   }
 
-  setUptoTimestamp(value: number) {
-    this.uptoTimestamp = value;
+  setMapUptoTimestamp(value: number) {
+    this.mapUptoTimestamp = value;
     let now = new Date();
-    this.getAllReadingsUptoTimestampForVehicle(this.calculateBeginingTimestamp(now, this.uptoTimestamp), now.toISOString(), this.vehicle.vin);
+    this.getAllReadingsUptoTimestampForVehicle(this.calculateBeginingTimestamp(now, this.mapUptoTimestamp), now.toISOString(), this.vehicle.vin);
   }
 
   refreshMap() {
     let now = new Date();
-    this.getAllReadingsUptoTimestampForVehicle(this.calculateBeginingTimestamp(now, this.uptoTimestamp), now.toISOString(), this.vehicle.vin);
+    this.getAllReadingsUptoTimestampForVehicle(this.calculateBeginingTimestamp(now, this.mapUptoTimestamp), now.toISOString(), this.vehicle.vin);
   }
   getVehicle(vin: string): void {
     this.vehicleService.getVehicle(vin)

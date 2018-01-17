@@ -31,14 +31,14 @@
             <h4 id="geolocation-title">Geolocation</h4>
             <!-- Split button -->
             <div id="geolocation-settings" class="btn-group">
-                <div id="past-minutes-info" class="btn btn-default">Past {{ uptoTimestamp }} minutes</div>
+                <div id="past-minutes-info" class="btn btn-default">Past {{ mapUptoTimestamp }} minutes</div>
                 <div type="button" class="btn btn-default" (click)="refreshMap()"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></div>
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="caret"></span>
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li class="list-item" *ngFor="let minutes of pastMinutes"><a (click)="setUptoTimestamp(minutes)" >Past {{ minutes }} minutes</a></li>
+                    <li class="list-item" *ngFor="let minutes of mapPastMinutes"><a (click)="setMapUptoTimestamp(minutes)" >Past {{ minutes }} minutes</a></li>
                 </ul>
             </div>
             
