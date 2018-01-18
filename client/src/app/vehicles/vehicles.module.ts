@@ -9,6 +9,7 @@ import { VehicleDetailComponent } from '../vehicle-detail/vehicle-detail.compone
 import { HistoricalAlertsChartComponent } from '../historical-alerts-chart/historical-alerts-chart.component';
 import { GeolocationComponent } from '../geolocation/geolocation.component';
 import { ApiKeys } from '../../config/api-keys';
+import { SignalChartComponent } from '../signal-chart/signal-chart.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import { ApiKeys } from '../../config/api-keys';
       apiKey: `${ApiKeys.googleMapsApiKey }`
     })
   ],
-  declarations: [VehiclesComponent, VehicleDetailComponent, HistoricalAlertsChartComponent, GeolocationComponent]
+  declarations: [VehiclesComponent, VehicleDetailComponent, HistoricalAlertsChartComponent, GeolocationComponent, SignalChartComponent]
 })
 
 export class VehiclesModule { }

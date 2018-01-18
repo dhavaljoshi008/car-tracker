@@ -1,0 +1,10 @@
+<div class="signal-chart">
+    <canvas baseChart
+        [chartType]="signalChartType"
+        [datasets]="signalChartData"
+        [labels]="signalChartLabels"
+        [options]="signalChartOptions"
+        [legend]="showLegend"
+        (chartClick)="onChartClick($event)">
+    </canvas>
+</div>

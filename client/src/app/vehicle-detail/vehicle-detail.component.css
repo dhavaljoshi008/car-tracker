@@ -6,13 +6,13 @@
     cursor: pointer;
 }
 
-#past-minutes-info:hover, #past-minutes-info:active {
+#past-minutes-info:hover, #past-minutes-info:active, #signal-info:hover, #signal-info:active {
     background-color: transparent;
     border-color: #ccc;
     cursor: default;
 }
 
-#past-minutes-info:active {
+#past-minutes-info:active, #signal-info:active {
     box-shadow: none;
 }
 
@@ -27,6 +27,10 @@ geolocation {
     }
 
     #geolocation-settings {
+        float: right;
+    }
+
+    #signal-settings, #signal-time-settings {
         float: right;
     }
 }

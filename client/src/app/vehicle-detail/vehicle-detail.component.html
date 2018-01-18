@@ -54,8 +54,35 @@
 
         </div>
         <div class="col-md-6">
-           
+            
+            <h4 id="signal-title">Signal History</h4>
 
+            <div id="signal-time-settings" class="btn-group">   
+                <div id="past-minutes-info" class="btn btn-default">Past {{ signalUptoTimestamp }} minutes</div>
+                <div type="button" class="btn btn-default" (click)="refreshSignalChart()"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></div>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="list-item" *ngFor="let minutes of signalPastMinutes"><a (click)="setSignalUptoTimestamp(minutes)" >Past {{ minutes }} minutes</a></li>
+                </ul>
+            </div>
+
+
+            <div id="signal-settings" class="btn-group">
+                <div id="signal-info" class="btn btn-default">{{ currentSignalType }}</div>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="list-item" *ngFor="let signal of signalTypes"><a (click)="setCurrentSignalType(signal)">{{ signal }}</a></li>
+                </ul>
+            </div>
+
+
+            <signal-chart [signalChartLabels]="signalLabels" [signalData]="signalData" [signalType]="currentSignalType"></signal-chart>
 
         </div>
     </div>

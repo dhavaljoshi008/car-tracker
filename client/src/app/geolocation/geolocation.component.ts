@@ -20,7 +20,7 @@ export class GeolocationComponent implements OnInit {
   constructor() {
     this.latitude = 37.09024;
     this.longitude = -95.712891;
-    this.zoom = 3;
+    this.zoom = 1;
    }
 
   ngOnInit() {

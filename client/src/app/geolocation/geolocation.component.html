@@ -1,5 +1,5 @@
 <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
-    <agm-marker *ngFor="let marker of markers" [latitude]="marker.latitude" [longitude]="marker.longitude">
+    <agm-marker *ngFor="let marker of markers" [latitude]="marker.latitude" [longitude]="marker.longitude" [markerDraggable]="marker.draggable">
         <agm-info-window >{{ marker.label }}</agm-info-window>
     </agm-marker>
 </agm-map>
